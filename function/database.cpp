@@ -34,14 +34,6 @@ int Database<T>::getDataSize()
 }
 
 template <typename T>
-void Database<T>::changeDatabase(std::string n)
-{
-    data.close();
-    name = n;
-    openDatabase();
-}
-
-template <typename T>
 void Database<T>::deleteDatabase()
 {
     data.close();
@@ -78,7 +70,7 @@ bool Database<T>::deleteData(int id)
     offset = 0;
     Database<T>::writeData(id, blank);
 
-    // Membuat objek vector sementara untuk menyimpan data yang tidak dihapus
+    // Membuat objek database sementara untuk menyimpan data yang tidak dihapus
     Database<T> tempData("temp");
 
     for (int i = 1; i <= size; i++)

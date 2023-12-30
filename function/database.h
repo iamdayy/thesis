@@ -17,10 +17,9 @@ public:
     Database(std::string n);
     void openDatabase();
     int getDataSize();
-    void changeDatabase(std::string n);
     void deleteDatabase();
     void writeData(int position, T& dataToWrite); // Metode template untuk menulis data ke file
-    T readData(int position); // Metode template untuk menulis data ke file
+    T readData(int position); // Metode template untuk membaca file ke data
     bool deleteData(int id);
 };
 
